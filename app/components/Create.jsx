@@ -17,11 +17,12 @@ export const Create = ({ onBuatTransaksi }) => {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ ket, harga }),
 		});
-		console.log(res.data);
+		const data = await res.json();
+
 		setModal(false);
 		setKet("");
 		setHarga();
-		// setTransaksi(res);
+		setTransaksi(data);
 	};
 
 	useEffect(() => {

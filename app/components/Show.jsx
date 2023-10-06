@@ -18,6 +18,7 @@ export const Show = ({ lists }) => {
 	// 		});
 	// }, []);
 	const { transaksi } = useContext(TransaksiContext);
+	// console.log(transaksi);
 
 	return (
 		<div className="w-full mt-5 pb-52">

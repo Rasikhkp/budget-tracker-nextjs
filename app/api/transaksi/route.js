@@ -11,11 +11,7 @@ export async function POST(req) {
 		await Transaksi.create({ keterangan: ket, harga: harga });
 		const data = await Transaksi.find();
 
-		return NextResponse.json({
-			data: data,
-			message: ["berhasil menambahkan transaksi"],
-			success: true,
-		});
+		return NextResponse.json(data);
 	} catch (error) {
 		console.log(error);
 	}
@@ -23,6 +19,6 @@ export async function POST(req) {
 
 export async function GET() {
 	await connectDB();
-	const res = await Transaksi.find();
-	return NextResponse.json(res);
+	const data = await Transaksi.find();
+	return NextResponse.json(data);
 }
